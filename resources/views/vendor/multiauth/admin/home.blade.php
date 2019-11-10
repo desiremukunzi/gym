@@ -1,4 +1,76 @@
-@extends('multiauth::layouts.app') 
+@extends('layouts.master')
+
+@section('content')
+
+                <div class="row">
+                    <div class="col-md-12">
+                        <div class="card">
+                            <div class="card-header">
+                                <h4 class="card-title text-center"> Attendance List</h4>
+                            </div>
+                            <div class="card-body">
+
+          <div class="form-inline">
+            <form class="card-title" method="POST" action="{{route('admin.from_to')}}">
+                  {{ csrf_field() }}
+                  <input type="hidden" name="id" value="{{$id}}">
+                  <input type="date" name="from" required="required" class="form-control" placeholder="from date">
+
+                  <input type="date" name="to" required="required" class="form-control"   placeholder="to date">
+
+                  <select name="sport" class="form-control">
+                            @foreach($sports as $sport)
+                            <option value={{$sport->sport->id}}>{{$sport->sport->name}}</option>
+                            @endforeach                  
+                  </select>
+
+                  <input type="submit" name="check" value="Pull Attendance History" class="btn btn-info">
+            </form>
+        </div>
+
+                                <div class="table-responsive">
+                                     <form method="POST" action="{{ route('admin.attendance')}}" >
+                            @csrf 
+                     <table class="table table-condensed">
+                      <thead class="text-primary">
+                        <tr>
+                            <td>Index</td>
+                            <td>Names</td>
+                            @foreach($sports as $sport)
+                            <td>{{$sport->sport->name}}</td>
+                            @endforeach
+                            <td></td>
+                        </tr>
+                      </thead>
+                      <tbody>
+                        @foreach($clients as $client)
+                            <tr>
+                                <td>{{$loop->iteration}}</td>
+                        
+                       <td>{{$client->name}}</td>
+{{--                         <input type="text" name="client_id" value="{{$client->id}}">
+ --}}                        @foreach($sports as $sport)
+                       <td> 
+                        <input type="checkbox" name="{{$sport->sport->name}}" value="{{$client->id}}">
+                    </td>
+                        @endforeach
+                        <td><button type="submit" class="btn btn-primary"><i class="now-ui-icons business_money-coins"></i></button></td>
+                        </tr>                         
+                        @endforeach  
+                        </tbody>                      
+                     </table>
+                    </form>   
+
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                   
+                </div>
+                
+            @endsection
+
+{{-- @extends('layouts.master')
 @section('content')
 <div class="container">
     <div class="row justify-content-center">
@@ -59,4 +131,4 @@
         </div>
     </div>
 </div>
-@endsection
+@endsection --}}

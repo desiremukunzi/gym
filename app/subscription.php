@@ -18,4 +18,12 @@ class subscription extends Model
     {
         return $this->belongsTo(member::class);
     }
+    public function client_type()
+    {
+        return $this->belongsTo(client_type::class);
+    }
+    public function duration()
+    {
+        return $this->belongsTo(duration::class);
+    }
 }

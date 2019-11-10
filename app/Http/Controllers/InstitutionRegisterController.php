@@ -76,9 +76,12 @@ class InstitutionRegisterController extends Controller
      * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function show($id)
+    public function show()
     {
-        //
+    $entities=client_type::with('subscription')->where('company','1')->get();
+    
+   //return view('admin.entities',compact('entities'));
+   return $entities;
     }
 
     /**

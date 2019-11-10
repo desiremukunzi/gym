@@ -1,10 +1,10 @@
-@extends('multiauth::layouts.app')
+@extends('layouts.master')
 @section('content')
-<div class="container">
+
     <div class="row justify-content-center">
         <div class="col-md-8">
             <div class="card">
-                <div class="card-header">Register New {{ ucfirst(config('multiauth.prefix')) }}</div>
+                <div class="card-header"><center><strong>Register New Entity</strong></center></div>
                 <div class="card-body">
                     @include('multiauth::message')
                     <form method="POST" action="{{ route('admin.institution_register') }}">
@@ -73,16 +73,18 @@
                         </div>
                         
                         <div class="form-group row mb-0">
-                            <div class="col-md-6 offset-md-4">
-                                <button type="submit" class="btn btn-primary btn-sm">
+                            <div class="col-md-4"></div>
+                            <div class="col-md-6">
+                                <button type="submit" class="btn btn-primary float-left">
                                 Register
                                 </button>
-                                <a href="{{ route('admin.show') }}" class="btn btn-danger btn-sm float-right">
+                                <a href="{{ route('admin.show') }}" class="btn btn-info float-right">
                                     Back
                                 </a>
                             </div>
                         </div>
                     </form>
+                    </div>
                 </div>
             </div>
         </div>

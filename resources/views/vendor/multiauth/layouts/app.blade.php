@@ -48,10 +48,10 @@
   <span class="caret"></span></button>
   <ul class="dropdown-menu">
     @foreach($companies as $companie)
-                        <li>
-                            <a href="/admin/home/{{$companie->id}}">{{$companie->name}}</a>
+       <li>
+         <a href="/admin/home/{{$companie->id}}">{{$companie->name}}</a>
                         </li>
-                        @endforeach
+    @endforeach
                         <li><a href="{{ route('admin.institution') }}">New</a></li>
   </ul>
 </div>                        </li>

@@ -1,1 +1,35 @@
 subscriptions types
+Asdf.100
+
+username = doadmin
+password = eb6z1dsd1nivxqoc
+host = db-gym-do-user-6669328-0.db.ondigitalocean.com
+port = 25060
+database = defaultdb
+sslmode = REQUIRED
+
+root@ubuntu-s-1vcpu-1gb-nyc3-01:/var/www# cd gym/
+root@ubuntu-s-1vcpu-1gb-nyc3-01:/var/www/gym# ls
+app      bootstrap      composer.lock  database   package.json  public     routes      storage  vendor          yarn.lock
+artisan  composer.json  config         notes.txt  phpunit.xml   resources  server.php  tests    webpack.mix.js
+root@ubuntu-s-1vcpu-1gb-nyc3-01:/var/www/gym# sudo nano .env
+root@ubuntu-s-1vcpu-1gb-nyc3-01:/var/www/gym# sudo chown -R www-data.www-data /var/www/gym/storage
+root@ubuntu-s-1vcpu-1gb-nyc3-01:/var/www/gym# sudo chown -R www-data.www-data /var/www/gym/bootstrap/cache
+root@ubuntu-s-1vcpu-1gb-nyc3-01:/var/www/gym# sudo systemctl ngnix restart
+Unknown operation ngnix.
+root@ubuntu-s-1vcpu-1gb-nyc3-01:/var/www/gym# sudo systemctl nginx restart
+Unknown operation nginx.
+root@ubuntu-s-1vcpu-1gb-nyc3-01:/var/www/gym# sudo systemctl restart nginx
+root@ubuntu-s-1vcpu-1gb-nyc3-01:/var/www/gym# sudo nano /etc/nginx/sites-available/bodymax.rw
+root@ubuntu-s-1vcpu-1gb-nyc3-01:/var/www/gym# sudo systemctl restart nginx
+root@ubuntu-s-1vcpu-1gb-nyc3-01:/var/www/gym# sudo nano.env
+sudo: nano.env: command not found
+root@ubuntu-s-1vcpu-1gb-nyc3-01:/var/www/gym# sudo nano .env
+root@ubuntu-s-1vcpu-1gb-nyc3-01:/var/www/gym# sudo nano .env
+root@ubuntu-s-1vcpu-1gb-nyc3-01:/var/www/gym# sudo /etc/init.d/mysql start
+[ ok ] Starting mysql (via systemctl): mysql.service.
+root@ubuntu-s-1vcpu-1gb-nyc3-01:/var/www/gym# sudo systemctl restart nginx
+
+$ scp .env root@45.55.57.73:/var/www/gym/
+
+

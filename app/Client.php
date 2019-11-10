@@ -63,5 +63,9 @@ class Client extends Authenticatable
     {
         return $this->hasMany(attendance::class);
     }
+     public function order()
+    {
+        return $this->hasMany(order::class);
+    }
 
 }

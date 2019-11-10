@@ -28,4 +28,7 @@ view::composer(['*'],function($view){
 
  Route::get('institution','InstitutionRegisterController@index')->name('admin.institution');
 Route::post('admin/institution_register', 'InstitutionRegisterController@store')->name('admin.institution_register');
+Route::get('admin/payments', 'PaymentController@index')->name('admin.payments');
+Route::get('admin/entities', 'InstitutionRegisterController@show')->name('admin.entities');
+
 
